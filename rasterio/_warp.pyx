@@ -660,7 +660,7 @@ def _calculate_default_transform(
     hds = open_dataset(vrt_doc, 0x00 | 0x02 | 0x04, ['VRT'], {}, None)
     try:
         imgProjOptions = CSLSetNameValue(imgProjOptions, "GCPS_OK", "TRUE")
-        imgProjOptions = CSLSetNameValue(imgProjOptions, "MAX_GCP_ORDER", "0")
+        imgProjOptions = CSLSetNameValue(imgProjOptions, "MAX_GCP_ORDER", "3")
         imgProjOptions = CSLSetNameValue(imgProjOptions, "DST_SRS", wkt)
         for key, val in kwargs.items():
             key = key.upper().encode('utf-8')
