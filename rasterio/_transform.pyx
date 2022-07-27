@@ -253,6 +253,7 @@ cdef class GCPTransformerBase:
         """
         cdef int bReversed = 1
         cdef int nReqOrder = 3  # let GDAL determine polynomial order
+        raise ValueError("I'm doing a GCPTransform")
         cdef GDAL_GCP *gcplist = <GDAL_GCP *>CPLMalloc(len(gcps) * sizeof(GDAL_GCP))
         cdef int nGCPCount = len(gcps)
 
