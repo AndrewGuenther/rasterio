@@ -252,7 +252,7 @@ cdef class GCPTransformerBase:
             Ground Control Points for a dataset.
         """
         cdef int bReversed = 1
-        cdef int nReqOrder = 0  # let GDAL determine polynomial order
+        cdef int nReqOrder = 3  # let GDAL determine polynomial order
         cdef GDAL_GCP *gcplist = <GDAL_GCP *>CPLMalloc(len(gcps) * sizeof(GDAL_GCP))
         cdef int nGCPCount = len(gcps)
 
